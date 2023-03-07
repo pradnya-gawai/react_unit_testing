@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -17,16 +18,28 @@ function Header() {
           </div>
         </Container>
       </Navbar>
-      <div>
-        <button>Home</button>
-        <button
-          onClick={() => {
-            navigate("/contact");
-          }}
-        >
-          Contact
-        </button>
-      </div>
+      <hr/>
+      <Nav bg="light" expand="lg">
+        <Container>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Home
+          </Button>
+          &nbsp; &nbsp;
+          <Button
+            variant="secondary"
+            onClick={() => {
+              navigate("/contact");
+            }}
+          >
+            Contact
+          </Button>
+        </Container>
+      </Nav>
     </>
   );
 }
