@@ -1,6 +1,10 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import { homePageSubContent, reactComponent } from "./CONSTANTS";
+import {
+  homePageSubContent,
+  reactComponent,
+  testingSnippit,
+} from "./CONSTANTS";
 
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
@@ -12,7 +16,14 @@ function Home(props) {
       <Header />
 
       <div>
-        <div style={{ marginLeft: "18px", marginTop: "55px", display: "flex" }}>
+        <div
+          style={{
+            marginLeft: "18px",
+            marginTop: "55px",
+            display: "flex",
+            padding: "4",
+          }}
+        >
           <div
             style={{
               border: "1px solid transparent",
@@ -75,13 +86,14 @@ function Home(props) {
               </div>
               <div>
                 <p>
-                  Step 1: Create a new react app <br /> For unit testing a react
-                  app, let’s create one using the command given below:
+                  <strong>Step 1: Create a new react app</strong> <br /> For
+                  unit testing a react app, let’s create one using the command
+                  given below:
                   <br />
                   <br />
                   <div
                     style={{
-                      backgroundColor: "black",
+                      backgroundColor: "#363434",
                       padding: "20px 12px",
                       color: "white",
                     }}
@@ -95,7 +107,7 @@ function Home(props) {
                   do not have to install them manually.
                 </p>
                 <p>
-                  Step 2: Create a component
+                  <strong>Step 2: Create a component</strong>
                   <br />
                   Let’s create a component called Counter, which simply
                   increases and decreases a numeric value at the click of
@@ -103,13 +115,91 @@ function Home(props) {
                 </p>
                 <div
                   style={{
-                    backgroundColor: "black",
+                    backgroundColor: "#363434",
                     padding: "20px 12px",
                     color: "white",
                   }}
                 >
-                  <br />
+                  <pre>
+                    <code>{reactComponent}</code>
+                  </pre>
                 </div>
+                <p>
+                  Here, the important thing to note is the data-testid
+                  attributes that will be used to select these elements in the
+                  test file.
+                  <br />
+                  <strong>
+                    Step 3: Write a unit test for the react component
+                  </strong>
+                  <br />
+                  Before writing an actual unit test, let’s understand the
+                  general structure of a test block:
+                  <br />
+                  <ol style={{lineHeight:"2" }}>
+                    <li>A test is usually written in a test block.</li>
+                    <li>
+                      Inside the test block, the first thing we do is to render
+                      the component that we want to test.
+                    </li>
+                    <li>Select the elements that we want to interact with</li>
+                    <li>Interact with those elements</li>
+                    <li>Assert that the results are as expected.</li>
+                  </ol>
+                  <p>
+                    The unit test of react component can be written as seen in
+                    the code snippet below:
+                  </p>
+                </p>
+                <div
+                  style={{
+                    backgroundColor: "#363434",
+                    padding: "20px 12px",
+                    color: "white",
+                  }}
+                >
+                  <pre>
+                    <code>{testingSnippit}</code>
+                  </pre>
+                </div>
+                <p>
+                  Note: In order to let jest know about this test file, it’s
+                  important to use the extension .test.js.
+                </p>
+                <ol style={{lineHeight: "2"}}>
+                  <li>
+                    The test block can be written either using test() or it().
+                    Either of the two methods takes two parameters:
+                    <ul>
+                      <li>
+                        The first parameter is to name the test. For example,
+                        increments counter.
+                      </li>
+                      <li>
+                        The second parameter is a callback function, which
+                        describes the actual test.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Using the render() method from the react testing library in
+                    the above test to render the Counter component in a virtual
+                    DOM.
+                  </li>
+                  <li>
+                    The screen property from the react testing library helps
+                    select the elements needed to test by the test ids provided
+                    earlier.
+                  </li>
+                  <li>
+                    To interact with the button, using the fireEvent property
+                    from the react testing library in the test.
+                  </li>
+                  <li>
+                    And finally, it is asserted that the counter element will
+                    contain a value ‘1’.
+                  </li>
+                </ol>
               </div>
             </div>
           </div>
