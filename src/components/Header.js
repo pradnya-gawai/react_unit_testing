@@ -28,10 +28,10 @@ function Header() {
               <Nav.Link
                 // variant="secondary"
                 onClick={() => {
-                  navigate("/contact");
+                  navigate("/sampletest");
                 }}
               >
-                Contact
+                Sample Test
               </Nav.Link>
             </Nav>
           </Container>
