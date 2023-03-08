@@ -5,7 +5,7 @@ function Contact(props) {
   return (
     <div>
       <Header />
-      <div>Contact</div>
+      <div>Contact Page</div>
     </div>
   );
 }
