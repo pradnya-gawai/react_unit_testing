@@ -136,7 +136,7 @@ function Home(props) {
                   Before writing an actual unit test, let’s understand the
                   general structure of a test block:
                   <br />
-                  <ol style={{lineHeight:"2" }}>
+                  <ol style={{ lineHeight: "2" }}>
                     <li>A test is usually written in a test block.</li>
                     <li>
                       Inside the test block, the first thing we do is to render
@@ -166,7 +166,7 @@ function Home(props) {
                   Note: In order to let jest know about this test file, it’s
                   important to use the extension .test.js.
                 </p>
-                <ol style={{lineHeight: "2"}}>
+                <ol style={{ lineHeight: "2" }}>
                   <li>
                     The test block can be written either using test() or it().
                     Either of the two methods takes two parameters:
@@ -200,6 +200,22 @@ function Home(props) {
                     contain a value ‘1’.
                   </li>
                 </ol>
+                <p>
+                  {" "}
+                  <strong>Step 4: Run the test</strong>
+                </p>
+                <div
+                  style={{
+                    backgroundColor: "#363434",
+                    padding: "4px",
+                    color: "white",
+                  }}
+                >
+                  <pre>
+                    <code>npm run test</code>
+                  </pre>
+                </div>
+
               </div>
             </div>
           </div>
