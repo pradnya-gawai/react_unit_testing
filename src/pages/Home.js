@@ -4,6 +4,7 @@ import { homePageSubContent } from "./CONSTANTS";
 
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
+import testImage from "../assets/jestlogo.png";
 
 function Home(props) {
   return (
@@ -66,14 +67,25 @@ function Home(props) {
             </div>
           </div>
 
-          <div style={{ border: "1px solid transparent", padding: "4px" }}>
+          {/* <div style={{ border: "1px solid transparent", padding: "4px" }}>
             <div>
               <h5 className="me-auto">
-                What is Unit Testing for React Apps? Why is it important?
+                Best practices for testing React Apps with JEST
               </h5>
-              <p>{homePageSubContent}</p>
+              <p>
+                Jest is a JavaScript testing framework that allows developers to
+                run tests on JavaScript and TypeScript code and can be easily
+                integrated with React JS.
+                <br />
+                <a href="https://jestjs.io/docs/getting-started">
+                  jest offical documentation
+                </a>
+              </p>
               <div>
-                <strong>Process Becomes Agile:</strong>
+                <strong>
+                  Before writing an actual unit test, let’s understand the
+                  general structure of a test block:
+                </strong>
                 <p>
                   Agile Testing process is the main advantage of unit testing.
                   When you add more features to the software, it might affect
@@ -118,6 +130,66 @@ function Home(props) {
                 </strong>
               </div>
             </div>
+          </div> */}
+          <div
+            style={{
+              border: "1px solid transparent",
+              padding: "4px",
+              height: "100%",
+              width: "100%",
+              backgroundColor: "#f0f2f7",
+            }}
+          >
+            <p>
+              <strong>
+                There are 2 main libraries when writing unit test cases - test
+                runner and helper libraries
+              </strong>
+            </p>
+            <p>
+              Libraries like <a href="https://jestjs.io/"> Jest</a> are test
+              runners, they provide the framework to write the unit test cases.
+            </p>
+            <p>
+              Libraries like
+              <a href="https://testing-library.com/docs/react-testing-library/intro/">
+                React Testing Library
+              </a>{" "}
+              are helper libraries.{" "}
+            </p>
+            <p style={{ backgroundColor: "#fff87d" }}>
+              <i>
+                " create-react-app uses jest and react-testing-library by
+                default, so we don’t need to do any configuration. "
+              </i>
+            </p>
+            <p style={{ backgroundColor: "#fff87d" }}>
+              <i>
+                " Jest is a JavaScript test runner that lets you access the DOM
+                via jsdom "
+              </i>
+            </p>
+            <p style={{ backgroundColor: "#fff87d" }}>
+              <i>
+                " Jest can be used in projects that use webpack to manage
+                assets, styles, and compilation. webpack does offer some unique
+                challenges over other tools. Refer to the<a href="https://jestjs.io/docs/webpack">webpack guide</a>  to get
+                started. "
+              </i>
+            </p>
+
+            <hr />
+            <p>
+              <strong>Best practices for testing React Apps with JEST</strong>
+            </p>
+            <ol>
+              <li>Avoid unnecessary tests</li>
+              <li>Don’t test implementation details</li>
+              <li>
+                Push business logic into pure functions rather than UI
+                components:
+              </li>
+            </ol>
           </div>
         </div>
       </div>
