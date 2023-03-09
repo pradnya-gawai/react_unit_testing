@@ -38,35 +38,6 @@ function Header() {
         </Navbar>
       </div>
 
-      {/* <Navbar bg="light" expand="lg">
-        <Container>
-          <div className="col-xs-1 center-block">
-            <Navbar.Brand>React Testing Library </Navbar.Brand>
-          </div>
-        </Container>
-      </Navbar>
-      <hr/>
-      <Nav bg="light" expand="lg">
-        <Container>
-          <Button
-            variant="secondary"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Home
-          </Button>
-          &nbsp; &nbsp;
-          <Button
-            variant="secondary"
-            onClick={() => {
-              navigate("/contact");
-            }}
-          >
-            Contact
-          </Button>
-        </Container>
-      </Nav> */}
     </>
   );
 }
