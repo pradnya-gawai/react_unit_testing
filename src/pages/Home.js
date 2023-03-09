@@ -33,7 +33,7 @@ function Home(props) {
           ></div>
           <div style={{ border: "1px solid transparent", padding: "4px" }}>
             <div>
-              <h5 className="me-auto">
+              <h5 className="me-auto" data-testid="page-title">
                 What is Unit Testing for React Apps? Why is it important?
               </h5>
               <p>{homePageSubContent}</p>
@@ -215,7 +215,6 @@ function Home(props) {
                     <code>npm run test</code>
                   </pre>
                 </div>
-
               </div>
             </div>
           </div>
