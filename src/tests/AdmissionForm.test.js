@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import AdmissionForm from "../pages/AdmissionForm";
-import { WithProvider, WithRouter } from "./helper/RouteProvider";
+import { WithRouter } from "./helper/RouteProvider";
 
 describe("AdmissionForm component", () => {
   it("submits form with correct data", () => {
@@ -35,7 +35,6 @@ describe("AdmissionForm component", () => {
     // Submit the form
     // fireEvent.click(submitButton);
     userEvent.click(submitButton)
-    // expect(onSubmit).toHaveBeenCalledTimes(1);
     // expect(jest.fn()).toHaveBeenCalledTimes(1)
     // expect(onSubmit).toHaveBeenCalledWith({
     //     firstName: 'Pradnya',

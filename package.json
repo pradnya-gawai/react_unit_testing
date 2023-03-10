@@ -2,6 +2,7 @@
   "name": "react_unit_testing",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pradnya-gawai.github.io/react_unit_testing",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -25,7 +26,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "testcover": "npm run test -- --coverage --watchAll=false",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +64,7 @@
     "@babel/core": "^7.19.6",
     "@babel/preset-react": "^7.16.0",
     "@testing-library/dom": "^8.11.1",
+    "gh-pages": "^5.0.0",
     "webpack-bundle-analyzer": "^4.5.0"
   }
 }

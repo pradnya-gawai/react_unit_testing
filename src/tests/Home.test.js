@@ -1,4 +1,4 @@
-import { WithProvider, WithRouter } from "./helper/RouteProvider";
+import {  WithRouter } from "./helper/RouteProvider";
 import { screen, render } from "@testing-library/react";
 import Home from "../pages/Home";
 
