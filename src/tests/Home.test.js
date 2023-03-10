@@ -1,21 +1,12 @@
 import { WithProvider, WithRouter } from "./helper/RouteProvider";
-import {
-  screen,
-  render,
-  waitFor,
-  fireEvent,
-  findByTestId,
-  getByTestId,
-} from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import Home from "../pages/Home";
 
 test("Home page title", () => {
   render(
-    // <WithProvider>
-    //   <WithRouter>
+       <WithRouter>
         <Home />
-    //   </WithRouter>
-    // </WithProvider>
+       </WithRouter>
   );
   let pageTilte = screen.getByTestId("page-title");
   expect(pageTilte).toHaveTextContent(

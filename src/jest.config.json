@@ -1,0 +1,26 @@
+{
+  "roots": ["<rootDir>/src"],
+  "preset": "react",
+  "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(mathletics-portal-communication-service))"
+  ],
+  "testMatch": ["**/__tests__/**/*.js?(x)", "**/?(*.)+(spec|test).js?(x)"],
+  "moduleNameMapper": {
+    "\\.(css|less|scss)$": "identity-obj-proxy"
+  },
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
+  "collectCoverage": true,
+  "coverageReporters": ["json", "lcov", "text"],
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": 80
+    }
+  }
+}

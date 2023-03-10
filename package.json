@@ -48,6 +48,11 @@
   "nohoist": [
     "**/babel-preset-react-app/@babel/runtime"
   ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ]
+  },
   "transformIgnorePatterns": [
     "node_modules/(?!(imask|[LIBRARY]|@babel)/)"
   ],

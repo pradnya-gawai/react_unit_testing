@@ -1,14 +1,14 @@
-import axios from "axios";
-const axiosClient = axios.create();
+import axios from "axios"
 
-export const getRequest = (URL) => {
+export const getRequest = async (URL) => {
+
+  const axiosClient = axios.create();
   console.log(URL, "URL");
-  return axiosClient
-    .get(URL)
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      console.log("Sorry can not find request !");
-    });
+  try {
+    const response = await axiosClient
+      .get(URL);
+    return response.data;
+  } catch (error) {
+    console.log("Sorry can not find request !");
+  }
 };

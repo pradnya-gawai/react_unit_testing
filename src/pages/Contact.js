@@ -32,7 +32,7 @@ function Contact(props) {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div style={{ marginLeft: "8px", marginTop: "55px", display: "flex" }}>
         <div style={{ border: "1px solid transparent", padding: "4px" }}>
           <div  style={{ textAlign: "center" }}>

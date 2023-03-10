@@ -13,7 +13,7 @@ import testImage from "../assets/jestlogo.png";
 function Home(props) {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
 
       <div>
         <div
