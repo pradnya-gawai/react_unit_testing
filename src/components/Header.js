@@ -8,7 +8,6 @@ import Home from "../pages/Home";
 
 function Header() {
   const homePageClick = (path) => {
-    console.log("called", path);
     return <Navigate to={`${path}`} />;
   };
 

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-import "../assets/css/admission.css"
+import "../assets/css/admission.css";
 
-function AdmissionForm() {
+export const arrayToObject = (arr = []) => {
+  const res = {};
+  for (let pair of arr) {
+    const [key, value] = pair;
+    res[key] = value;
+  }
+  return res;
+};
+function AdmissionForm(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,12 +17,20 @@ function AdmissionForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    props.onSubmit({ firstName, lastName, email, phoneNumber });
   };
 
   return (
     <div style={{ marginLeft: "8px", marginTop: "55px", display: "flex" }}>
       <div style={{ border: "1px solid transparent", padding: "4px" }}>
-        <div style={{ textAlign: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
           <h5>User form</h5>
         </div>
         <div
@@ -29,7 +45,7 @@ function AdmissionForm() {
         >
           <div className="form-group">
             <form onSubmit={handleSubmit}>
-              <div >
+              <div>
                 <label>
                   First Name:&nbsp;&nbsp;
                   <input
@@ -51,7 +67,7 @@ function AdmissionForm() {
                 <br />
                 <label>
                   Email Add: &nbsp;&nbsp;
-               <input
+                  <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -67,6 +83,8 @@ function AdmissionForm() {
                   />
                 </label>
                 <br />
+                <input id="checkBox" type="checkbox" />
+                <label htmlFor="checkBox">Add Data</label>
                 <button type="submit">Submit</button>
               </div>
             </form>

@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
-
 import { useDispatch, useSelector } from "react-redux";
 import { jokeAction } from "../redux/actions/jokeaction";
+import { TodoActionCreator } from "../redux/actioncreators/DummyActionCreator";
 
 import Header from "../components/Header";
 
 function Contact(props) {
   const userData = useSelector((state) => state?.todoData);
   const dispatch = useDispatch();
-  console.log(userData, "userData");
   const cardColor = [
     "#dff5f3",
     "#f9fac3",
@@ -23,11 +22,14 @@ function Contact(props) {
     "#f9e1fa",
   ];
 
-  useEffect(() => {
-    console.log("called");
-    // getResponse()
+  const loadUserData = () => {
     dispatch(jokeAction());
-    console.log(userData, "userData");
+    props.onClick(userData );
+  };
+  useEffect(() => {
+    return () => {
+      dispatch(TodoActionCreator([]));
+    };
   }, []);
 
   return (
@@ -35,9 +37,12 @@ function Contact(props) {
       {/* <Header /> */}
       <div style={{ marginLeft: "8px", marginTop: "55px", display: "flex" }}>
         <div style={{ border: "1px solid transparent", padding: "4px" }}>
-          <div  style={{ textAlign: "center" }}>
-            <h5>User Data</h5>
-            </div>
+          <div style={{ textAlign: "center" }}>
+            <button onClick={loadUserData}>User Data</button>
+            <ul>
+              <li>Item One</li>
+            </ul>
+          </div>
           <div
             style={{
               position: "relative",
@@ -45,7 +50,7 @@ function Contact(props) {
               marginTop: "10px",
               justifyContent: "space-around",
               flexWrap: "wrap",
-              gap:2
+              gap: 2,
             }}
           >
             {userData &&

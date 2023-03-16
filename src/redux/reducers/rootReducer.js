@@ -4,7 +4,6 @@ const initialState = {
   todoData: null,
 };
 export const rootReducer = (state = initialState, action) => {
-  console.log(action);
   const {type,payload} = action;
   switch (type) {
     case DUMMY_ACTION:
@@ -15,6 +14,5 @@ export const rootReducer = (state = initialState, action) => {
       break;
   }
 
-  console.log(state);
   return state;
 };

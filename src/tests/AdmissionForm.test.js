@@ -2,9 +2,10 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import AdmissionForm from "../pages/AdmissionForm";
 import { WithRouter } from "./helper/RouteProvider";
+import { arrayToObject } from "../pages//AdmissionForm";
 
 describe("AdmissionForm component", () => {
-  it("submits form with correct data", () => {
+  test("submits form with correct data", () => {
     const onSubmit = jest.fn();
 
     // Render the AdmissionForm component
@@ -22,27 +23,24 @@ describe("AdmissionForm component", () => {
     const submitButton = screen.getByRole("button", { name: "Submit" });
 
     // Fill out the form inputs with valid data
-    // fireEvent.change(firstNameInput, { target: { value: "pradnya" } });
-    // fireEvent.change(lastNameInput, { target: { value: "gawai" } });
-    // fireEvent.change(emailInput, { target: { value: "pradnya@gmail.com" } });
-    // fireEvent.change(phoneNumberInput, { target: { value: "9876543210" } });
-
-    userEvent.type(firstNameInput, "Pradnya");
-    userEvent.type(lastNameInput, "Gawai");
-    userEvent.type(emailInput, "pradnya@gmail.com");
-    userEvent.type(phoneNumberInput, "9876543210");
-
+    fireEvent.change(firstNameInput, { target: { value: "Pradnya" } });
+    fireEvent.change(lastNameInput, { target: { value: "Gawai" } });
+    fireEvent.change(emailInput, { target: { value: "pradnya@gmail.com" } });
+    fireEvent.change(phoneNumberInput, { target: { value: "9876543210" } });
+    // userEvent.type(firstNameInput, "Pradnya");
+    // userEvent.type(lastNameInput, "Gawai");
+    // userEvent.type(emailInput, "pradnya@gmail.com");
+    // userEvent.type(phoneNumberInput, "9876543210");
     // Submit the form
-    // fireEvent.click(submitButton);
-    userEvent.click(submitButton)
-    // expect(jest.fn()).toHaveBeenCalledTimes(1)
-    // expect(onSubmit).toHaveBeenCalledWith({
-    //     firstName: 'Pradnya',
-    //     lastName: 'Gawai',
-    //     email: 'pradnya@gmail.com',
-    //     phoneNumber: '9876543210',
-    //   });
-  
+    fireEvent.click(submitButton);
+    // userEvent.click(submitButton);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
+    expect(onSubmit).toHaveBeenCalledWith({
+      firstName: "Pradnya",
+      lastName: "Gawai",
+      email: "pradnya@gmail.com",
+      phoneNumber: "9876543210",
+    });
 
     // Verify that form was submitted with correct data
     expect(firstNameInput).toHaveValue("Pradnya");
@@ -53,5 +51,35 @@ describe("AdmissionForm component", () => {
     expect(lastNameInput).toBeInTheDocument();
     expect(emailInput).toBeInTheDocument();
     expect(phoneNumberInput).toBeInTheDocument();
+  });
+
+  test("initail condition of checkbox", () => {
+    render(
+      <WithRouter>
+        <AdmissionForm />
+      </WithRouter>
+    );
+    const checkBoxElement = screen.getByRole("checkbox", { name: "Add Data" });
+    expect(checkBoxElement).not.toBeChecked();
+  });
+
+  test("test arry to object  function ", () => {
+    expect(
+      arrayToObject([
+        ["Name", "V Kohli"],
+        ["Matches", 13],
+        ["Runs", 590],
+        ["Highest", 183],
+        ["NO", 3],
+        ["SR", 131.5],
+      ])
+    ).toStrictEqual({
+      Name: "V Kohli",
+      Matches: 13,
+      Runs: 590,
+      Highest: 183,
+      NO: 3,
+      SR: 131.5,
+    });
   });
 });
