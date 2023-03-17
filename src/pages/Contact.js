@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { jokeAction } from "../redux/actions/jokeaction";
+import  {DummyAction}  from "../redux/actions/DummyAction";
 import { TodoActionCreator } from "../redux/actioncreators/DummyActionCreator";
 
 import Header from "../components/Header";
@@ -23,8 +23,8 @@ function Contact(props) {
   ];
 
   const loadUserData = () => {
-    dispatch(jokeAction());
-    props.onClick(userData );
+    dispatch(DummyAction());
+    props.onClick(userData);
   };
   useEffect(() => {
     return () => {
