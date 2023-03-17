@@ -27,6 +27,10 @@ function Header() {
               <Nav.Link>
                 <Link to="/admissionform"> Form Test </Link>
               </Nav.Link>
+              <Nav.Link>
+                <Link to="/icecreamorder"> testing user event </Link>
+              </Nav.Link>
+
 
 
             </Nav>

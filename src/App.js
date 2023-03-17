@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import AdmissionForm from "./pages/AdmissionForm";
+import SummaryForm from "./pages/SummaryForm";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/sampletest" element={<Contact />} />
           <Route path="/admissionform" element={<AdmissionForm />} />
+          <Route path="/icecreamorder" element={<SummaryForm />} />
         </Routes>
       </div>
     </>

@@ -21,7 +21,7 @@ test("user data button", () => {
   console.log(prettyDOM(userDataButton))
 
   expect(userDataButton).toBeInTheDocument();
-  // fireEvent.click(userDataButton);
-  userEvent.click(userDataButton);
+  fireEvent.click(userDataButton);
+  // userEvent.click(userDataButton);
   expect(onClick).toHaveBeenCalledTimes(1);
 });
